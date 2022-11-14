@@ -35,7 +35,7 @@ button,input{
     outline: 0;
     border: none;
     background-color: transparent;
-    cursor: pointer;
+    
 }
 
 li{
@@ -67,22 +67,202 @@ display: block;}
     color: var(--dark-color);
 }
 
+.app-header-search{
+    border: 2px solid var(--grey-color);
+    border-radius: 3rem;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.app-header-search .form-control{
+    min-width: 20px;
+    color: var(--light-color);
+}
+
+.app-header-search .search-btn{
+    color: var(--grey-color);
+    font-size: 2.3rem;
+    cursor: pointer;
+}
+
+/* search list */
+
+.search-list{
+    z-index: 10;
+    position: absolute;
+    top: calc(100% * 1rem);
+    left: 0;
+    background-color: var(--light-color);
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll;
+    display: none;
+
+}
+
+.search-list::-webkit-scrollbar{
+    width: 7px;
+}
+
+.search-list::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+
+}
+
+.search-list::-webkit-scrollbar-thumb{
+    background-color: #97ce4c;
+    border-radius: 5px;
+
+}
+
+.search-list-item{
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-color);
+    padding: 0.4rem 0;
+}
+
+.search-list-item img{
+    width: 50px;
+    margin-right:2rem ;
+}
+
+.search-list-item p{
+    font-weight: 1000;
+    cursor: pointer;
+}
+
+/* body */
+.app-body{
+    margin-top: 4rem;
+    height: 600px;
+    overflow-y: scroll;
+}
+.app-body::-webkit-scrollbar{
+    width: 7px;
+}
+.app-body::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.app-body::-webkit-scrollbar-thumb{
+    background-color: var(--dark-color);
+    border-radius: 5px;
+}
+
+.tab-body-single-biography{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    font-weight: 500;
+    font-size: 1.9rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.tab-body-single-biography:hover{
+    opacity:0.9 ;
+}
+.tab-body-single-biography.active-tab::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1.7rem;
+    width: 100%;
+    height: 4px;
+    background-color: var(--dark-color);
+}
 
 
 
+.tab-body-single-biography{
+   
+}
+.tab-body-single-biography li{
+    margin: 3.4rem 0;
+}
+.tab-body-single-biography li span{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.9rem;
+}
+
+.tab-body-single-biography li span:first-child{
+    font-weight: 600;
+    color: #505050;
+    margin-right: 1rem;
+
+}
+
+.tab-body-single-biography li span:last-child{
+font-weight: 600;
+text-transform: capitalize;
+background-color: #1d1c1c;
+border-radius: 2rem;
+padding: 0.8rem;
+text-align: right;
+}
 
 
+@media screen and (max-width:1200px){
+    .app-body-content{
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+    }
+    .tab-body-single-biography{
+        margin: 1.5rem 0;
+    }
+    
+}
+
+@media screen and (max-width:1000px) {
+    .app-body-content-list .name{
+        text-align: center;
+        margin-top: 1.8rem;
+    }
+    .app-body-content{
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+        max-width: 600px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .app-body-content-thumbnail{
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+}
 
 
+@media screen and (max-width:992px) {
+    .app-header{
+        flex-direction: column;
+    }
+    .app-header-search{
+        margin-top: 2.8rem;
+}
+}
 
+@media screen and (max-width:768) {
+    .tab-body-single-biography{
+        flex-direction: column;
+    }
+    .app-header-search{display: flex}
 
+    .app-header-search .form-control{
+        min-width: auto;
+    }
 
-
-
-
-
-
-
+   .app-header-search .search-btn{
+    padding-left: 2rem;
+   } 
+   .tab-body-single-biography{
+    margin-right: 3rem;
+   }
+}
 
 
 
