@@ -12,7 +12,7 @@ async function fetchAPI(){
     //getting data.name to populate on browser
     //creating new element
     const p = document.createElement("p")
-    p.innerHTML=data.name
+    p.innerHTML=data.episode[0].name
     //adding p tag to body
    body.appendChild(p)
 

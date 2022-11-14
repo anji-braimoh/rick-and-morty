@@ -4,10 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rick and Morty Character Porfiles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
+    <div class = "main-wrapper">
+        <div class = "app">
+            <!-- header -->
+            <div class="app-header">
+                <h2 class = "app-header-title">Rick<span>Morty.
+
+                </span></h2>
+
+                <form class="app-header-search">
+                    <input type="text" class = "form-control"
+                    placeholder="Search Characters here..."
+                    name="search">
+                    <button type="submit" class = "search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class = "search-list" id = "search-list">
+                        <!-- <img src = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+                        alt="">
+                        <p>Rick Sanchez</p> -->
+
+                    </div>
+                </form>
+            </div>
+<!-- end of app header -->
+        <div class = "app-body">
+            <div class = "app-body-content">
+                <!-- body thumbnail -->
+                <div class = "app-body-content-thumbnail">
+                    <img src = "https://rickandmortyapi.com/api/character/avatar/1.jpeg">
+                </div>
+                <!-- end of thumbnail -->
+
+                <div class="app-body-content-list">
+                    <div class = "name">Rick Sanchez</div>
+
+        
+                    <!-- tabs body -->
+                    <div class = "app-body-tabs-body">
+
+                        <!-- status tab -->
+                        <ul class = "tab-body-single-biography">
+                            <li>
+                                <span>Status</span>
+                                <span>Alive</span>
+                            </li>
+                            <li>
+                                <span>Species</span>
+                                <span>Human</span>
+                            </li>
+                    
+                            <li>
+                                <span>Gender</span>
+                                <span>Male</span>
+                            </li>
+                            <li>
+                                <span>Origin</span>
+                                <span>Earth (C-137)</span>
+                            </li>
+                                              
+                        </ul>
+                        <!-- end of status tab -->
+                    </div>
+                    <!-- end of tabs body -->
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
