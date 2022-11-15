@@ -86,20 +86,34 @@ const fetchCharacters = async(searchText) => {
         searchList.addEventListener('click', async (event) => {
             let searchId = event.target.dataset.id;
             let url = `https://rickandmortyapi.com/api/character/${searchId}`
-    try{
+
         const respons = await fetch (url)
-        data = await respons.json()
+        singleData = await respons.json()
         //  console.log(allData.response)
-        if (data !== null){
-             //console.log(allData.results)
-            console.log(data)
+      
+             showCharacter(singleData)
+             searchList.innerHTML = ""
+        })
+
+        const showCharacter = (data) => {
+            document.querySelector('.app-body-content-thumbnail').
+            innerHTML=`
+            <img src = "${data.image}">
+            `
         }
-    }catch( error ){
-        console.log(error)
-    }
-    })
+    
+     
+
+    // const showCharacters = (data) => {
+    //     document.querySelector('.app-body-content-thumbnail').
+    //     innerHTML = `
+    //     <img src = "${data[0].image}">
+    //     `
+    //    } 
+    
+    
         
-         
+      
              
     
     
