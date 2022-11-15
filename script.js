@@ -72,6 +72,13 @@ const fetchCharacters = async(searchText) => {
         })
     }
 
+    searchForm.search.addEventListener('keyup',() => {
+        if(searchForm.search.value.length>1){
+            fetchCharacters(searchForm.search.value)
+        } else{
+            searchList.innerHTML = ""
+        }
+        })
     
 
 
