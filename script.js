@@ -70,6 +70,7 @@ const fetchCharacters = async(searchText) => {
             `
             searchList.appendChild(divElem)
         })
+        
     }
 
     searchForm.search.addEventListener('keyup',() => {
@@ -82,27 +83,39 @@ const fetchCharacters = async(searchText) => {
 
 
 
-searchList.addEventListener('click',(event) => {
-    let searchID = event.target.dataset.id
-
-    let singleData = allData.results.filter(singleData=>{
-        return searchID === singleData.id
+        searchList.addEventListener('click', async (event) => {
+            let searchId = event.target.dataset.id;
+            let url = `https://rickandmortyapi.com/api/character/${searchId}`
+    try{
+        const respons = await fetch (url)
+        data = await respons.json()
+        //  console.log(allData.response)
+        if (data !== null){
+             //console.log(allData.results)
+            console.log(data)
+        }
+    }catch( error ){
+        console.log(error)
+    }
     })
-    console.log(singleData)
-}
-)
+        
+         
+             
+    
+    
+    // searchList.innerHTML = "";
+
+
+// const showCharacter = (data) => {
+//     console.log(data);
+//     document.querySelector('.app-body-content-thumbnail').innerHTML = `
+//         <img src = "${data[0].image.url}">
+//     `;
+// }
+
 
    //searchList.innerHTML = "")
 
 
-//  const showCharacters = (data) => {
-// console.log(data)
-
-//     document.querySelector('.app-body-content-thumbnail').innerHTML=`
-//   <img src = "${data[0].image}">
-//    ` 
- // }
-
-    
 
 
