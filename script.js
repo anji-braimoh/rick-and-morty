@@ -100,36 +100,30 @@ const fetchCharacters = async(searchText) => {
             innerHTML=`
             <img src = "${data.image}">
             `
+
+            document.querySelector('.name').textContent=data.name
+            document.querySelector('.tab-body-single-biography').innerHTML=`
+            <li>
+                <span>Status</span>
+                <span>${data.status}</span>
+            </li>
+            <li>
+                <span>Species</span>
+                <span>${data.species}</span>
+            </li>
+    
+            <li>
+                <span>Gender</span>
+                <span>${data.gender}</span>
+            </li>
+            <li>
+                <span>Origin</span>
+                <span>${data.origin}</span>
+            </li>
+                              
+        </ul>
+            
+            `
         }
     
-     
-
-    // const showCharacters = (data) => {
-    //     document.querySelector('.app-body-content-thumbnail').
-    //     innerHTML = `
-    //     <img src = "${data[0].image}">
-    //     `
-    //    } 
     
-    
-        
-      
-             
-    
-    
-    // searchList.innerHTML = "";
-
-
-// const showCharacter = (data) => {
-//     console.log(data);
-//     document.querySelector('.app-body-content-thumbnail').innerHTML = `
-//         <img src = "${data[0].image.url}">
-//     `;
-// }
-
-
-   //searchList.innerHTML = "")
-
-
-
-
