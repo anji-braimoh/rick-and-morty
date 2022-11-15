@@ -118,7 +118,7 @@ const fetchCharacters = async(searchText) => {
             </li>
             <li>
                 <span>Origin</span>
-                <span>${data.origin}</span>
+                <span>${data.origin.name}</span>
             </li>
                               
         </ul>
