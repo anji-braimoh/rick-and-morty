@@ -79,6 +79,30 @@ const fetchCharacters = async(searchText) => {
             searchList.innerHTML = ""
         }
         })
+
+
+
+searchList.addEventListener('click',(event) => {
+    let searchID = event.target.dataset.id
+
+    let singleData = allData.results.filter(singleData=>{
+        return searchID === singleData.id
+    })
+    console.log(singleData)
+}
+)
+
+   //searchList.innerHTML = "")
+
+
+//  const showCharacters = (data) => {
+// console.log(data)
+
+//     document.querySelector('.app-body-content-thumbnail').innerHTML=`
+//   <img src = "${data[0].image}">
+//    ` 
+ // }
+
     
 
 
