@@ -204,18 +204,22 @@ text-align: right;
 }
 
 
-@media screen and (max-width:1200px){
+/* @media screen and (max-width:1200px){
     .app-body-content{
-        grid-template-columns: 1fr 3fr;
-        align-items: center;
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+        max-width: 600px;
+        margin-right: auto;
+        margin-left: auto;
     }
     .tab-body-single-biography{
         margin: 1.5rem 0;
     }
+   
     
-}
+} */
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1200px) {
     .app-body-content-list .name{
         text-align: center;
         margin-top: 1.8rem;
@@ -234,6 +238,29 @@ text-align: right;
     }
     
 }
+
+@media screen and (min-width:1200px) {
+    img{width: 400px;
+        display: block;}
+
+        .app-body-content-list .name{
+            text-align: center;
+            margin-top: 1.8rem;
+        }
+        .app-body-content{
+            grid-template-columns: 1fr;
+            row-gap: 4rem;
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    
+        .app-body-content-thumbnail{
+            max-width: 400px;
+            margin: 0 auto;
+        }
+}
+
 
 
 @media screen and (max-width:992px) {
