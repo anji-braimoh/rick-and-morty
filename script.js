@@ -1,5 +1,7 @@
 // const body = document.querySelector("body") //grabbing body tag
 
+// const { json } = require("sequelize")
+
 //const { CANTOPEN } = require("sqlite3")
 
 // //fetching information from api and putting it into browser
@@ -30,23 +32,46 @@ let searchList = document.getElementById('search-list')
 
 let activeTab = 1,allData
 
+
+
 const getInputValue = (event) => {
     event.preventDefault()
     let searchText = searchForm.search.value
-    console.log(searchText)
+   fetchCharacters(searchText)
 }
 
 searchForm.addEventListener('submit', getInputValue)
 
-// const fetchCharacters = async(searchText) => {
-//     try {
-//         const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${searchText}`)
-//         allData = await response.json
-//         if(allData.response==='success'){
-//             console.log(allData)
-//         }
-//     } catch (error){
-//         console.log(error)
-//     }
-// } 
+const fetchCharacters = async(searchText) => {
+    let url = `https://rickandmortyapi.com/api/character/?name=${searchText}`
+    try{
+        const response = await fetch (url)
+        allData = await response.json()
+        //  console.log(allData.response)
+        if (allData !== null){
+             //console.log(allData.results)
+            showSearchList(allData.results)
+        }
+    }catch( error ){
+        console.log(error)
+    }
+    }
+
+    const showSearchList = (data) => {
+        searchList.innerHTML = ""
+        data.forEach(dataItem => {
+            
+            const divElem = document.createElement('div')
+            divElem.classList.add('search-list-item')
+            divElem.innerHTML= `
+            <img src = "${dataItem.image ? dataItem.image : ""}"
+        alt="">
+            <p data-id = "${dataItem.id}">${dataItem.name}</p>
+            `
+            searchList.appendChild(divElem)
+        })
+    }
+
+    
+
 
